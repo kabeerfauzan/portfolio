@@ -49,8 +49,6 @@
         .skill-bar-fill{position:relative;height:100%;border-radius:2px;transition:width 1.5s cubic-bezier(.25,.46,.45,.94);width:0}
         .skill-bar-fill::after{content:'';position:absolute;right:0;top:-3px;bottom:-3px;width:3px;background:inherit;filter:brightness(2);box-shadow:0 0 10px currentColor,0 0 20px currentColor;border-radius:2px}
         .skill-bar-fill.animate{width:var(--target-width)}
-        .hex-decoration{position:absolute;width:80px;height:80px;border:1px solid rgba(0,255,157,0.08);transform:rotate(45deg);animation:hexPulse 4s ease-in-out infinite;pointer-events:none}
-        @keyframes hexPulse{0%,100%{opacity:.3;transform:rotate(45deg) scale(1)}50%{opacity:.8;transform:rotate(45deg) scale(1.1)}}
         .data-stream{position:absolute;width:1px;background:linear-gradient(180deg,transparent,#00ff9d33,transparent);animation:dataFlow 3s linear infinite;pointer-events:none}
         @keyframes dataFlow{0%{transform:translateY(-100%)}100%{transform:translateY(200vh)}}
         .reveal-up{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
@@ -59,63 +57,32 @@
         .reveal-left.visible{opacity:1;transform:translateX(0)}
         .reveal-right{opacity:0;transform:translateX(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
         .reveal-right.visible{opacity:1;transform:translateX(0)}
-        .reveal-scale{opacity:0;transform:scale(.9);transition:all .8s cubic-bezier(.16,1,.3,1)}
-        .reveal-scale.visible{opacity:1;transform:scale(1)}
         .project-card{position:relative;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
-        .project-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#00ff9d08,transparent,#b400ff08);opacity:0;transition:opacity .5s;pointer-events:none}
-        .project-card:hover::before{opacity:1}
         .project-card:hover{transform:translateY(-8px);border-color:#00ff9d44}
-        .project-card .project-image{transition:all .7s cubic-bezier(.16,1,.3,1)}
-        .project-card:hover .project-image{transform:scale(1.08);filter:brightness(1.2) saturate(.8)}
-        .project-card .project-overlay{opacity:0;transition:all .5s}
-        .project-card:hover .project-overlay{opacity:1}
         .timeline-line{position:absolute;left:23px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,#00ff9d,#b400ff44,transparent);pointer-events:none}
-        .timeline-dot{position:absolute;left:16px;width:16px;height:16px;border:2px solid #00ff9d;background:#0a0a0f;border-radius:50%;z-index:2;transition:all .3s;pointer-events:none}
-        .timeline-dot::after{content:'';position:absolute;inset:3px;background:#00ff9d;border-radius:50%;opacity:0;transition:opacity .3s}
-        .timeline-item:hover .timeline-dot::after{opacity:1}
-        .timeline-item:hover .timeline-dot{box-shadow:0 0 15px #00ff9d88}
+        .timeline-dot{position:absolute;left:16px;width:16px;height:16px;border:2px solid #00ff9d;background:#0a0a0f;border-radius:50%;z-index:2;transition:all .3s}
         .nav-link{position:relative;padding:4px 0}
-        .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#00ff9d;transition:width .3s;box-shadow:0 0 8px #00ff9d}
+        .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#00ff9d;transition:width .3s}
         .nav-link:hover::after{width:100%}
         #particleCanvas{position:fixed;inset:0;z-index:1;pointer-events:none}
-        .corner-brackets{position:relative}
-        .corner-brackets .cb-tl,.corner-brackets .cb-tr,.corner-brackets .cb-bl,.corner-brackets .cb-br{position:absolute;width:12px;height:12px;border-color:#00ff9d55;border-style:solid;transition:all .3s;pointer-events:none}
-        .corner-brackets .cb-tl{top:0;left:0;border-width:1px 0 0 1px}
-        .corner-brackets .cb-tr{top:0;right:0;border-width:1px 1px 0 0}
-        .corner-brackets .cb-bl{bottom:0;left:0;border-width:0 0 1px 1px}
-        .corner-brackets .cb-br{bottom:0;right:0;border-width:0 1px 1px 0}
-        .corner-brackets:hover .cb-tl,.corner-brackets:hover .cb-tr,.corner-brackets:hover .cb-bl,.corner-brackets:hover .cb-br{border-color:#00ff9d;filter:drop-shadow(0 0 4px #00ff9d)}
         .status-dot{width:8px;height:8px;background:#00ff9d;border-radius:50%;position:relative}
         .status-dot::before{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid #00ff9d;animation:statusPulse 2s ease-out infinite}
         @keyframes statusPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2);opacity:0}}
         .noise-bg::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9997;opacity:.5}
         .section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#00ff9d;border:1px solid #00ff9d33;display:inline-flex;align-items:center;gap:8px;padding:6px 16px}
-        .section-label::before{content:'//';color:#00ff9d66}
         .tech-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;padding:3px 10px;border:1px solid #1f1f3a;color:#888;transition:all .3s}
-        .tech-tag:hover{border-color:#00ff9d66;color:#00ff9d;box-shadow:0 0 8px #00ff9d22}
+        .tech-tag:hover{border-color:#00ff9d66;color:#00ff9d}
         .mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
         .mobile-menu.open{transform:translateX(0)}
         .marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
         @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        .counter-value{font-variant-numeric:tabular-nums}
-        .research-card{position:relative;overflow:hidden;transition:all .4s}
-        .research-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#00ff9d;opacity:0;transition:opacity .3s;pointer-events:none}
-        .research-card:hover::before{opacity:1}
-        .research-card:hover{border-color:#00ff9d33;transform:translateX(4px)}
-        .shield-icon{animation:shieldPulse 3s ease-in-out infinite}
-        @keyframes shieldPulse{0%,100%{filter:drop-shadow(0 0 5px #00ff9d44)}50%{filter:drop-shadow(0 0 15px #00ff9d88)}}
-        @keyframes scrollIndicator{0%{top:-16px}100%{top:48px}}
-        .threat-counter{font-variant-numeric:tabular-nums;animation:threatFlicker 4s ease-in-out infinite}
-        @keyframes threatFlicker{0%,95%,100%{opacity:1}96%{opacity:.5}97%{opacity:1}98%{opacity:.3}}
-        section,nav,footer,.mobile-menu{position:relative;z-index:10}
-        a[href^="mailto"]{position:relative;z-index:100;cursor:pointer}
 
         /* ===== SQUARE PROFILE PHOTO ===== */
         .profile-square-outer {
             position: relative;
             width: 280px;
             height: 280px;
-            max-width: 80vw; /* Safety for very small screens */
+            max-width: 80vw;
             max-height: 80vw;
         }
         .profile-square-ring {
@@ -130,7 +97,6 @@
             animation: ringRotate 4s linear infinite;
         }
         @keyframes ringRotate { 100% { transform: rotate(360deg); } }
-
         .profile-square-inner {
             position: absolute;
             inset: 5px;
@@ -141,16 +107,6 @@
             0%, 100% { border-color: rgba(0,255,157,0.2); box-shadow: 0 0 15px rgba(0,255,157,0.03); }
             50% { border-color: rgba(0,255,157,0.45); box-shadow: 0 0 30px rgba(0,255,157,0.1); }
         }
-
-        .profile-square-glow {
-            position: absolute;
-            inset: -25px;
-            background: radial-gradient(circle, rgba(0,255,157,0.06) 0%, transparent 70%);
-            animation: glowPulse 4s ease-in-out infinite;
-            pointer-events: none;
-        }
-        @keyframes glowPulse { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
-
         .profile-square-img {
             position: absolute;
             inset: 7px;
@@ -163,32 +119,6 @@
             object-position: center 15%;
             display: block;
         }
-
-        .profile-entrance {
-            animation: profileEnter 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
-            opacity: 0;
-            transform: scale(0.85);
-        }
-        @keyframes profileEnter {
-            0% { opacity: 0; transform: scale(0.85); }
-            60% { opacity: 1; transform: scale(1.02); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Corner accent dots on the square */
-        .sq-corner-dot {
-            position: absolute;
-            width: 5px; height: 5px;
-            background: #00ff9d;
-            box-shadow: 0 0 8px #00ff9d88;
-        }
-        .sq-corner-dot-tl { top: -4px; left: -4px; animation: cornerBlink 2s ease-in-out infinite; }
-        .sq-corner-dot-tr { top: -4px; right: -4px; animation: cornerBlink 2s ease-in-out infinite 0.5s; }
-        .sq-corner-dot-bl { bottom: -4px; left: -4px; animation: cornerBlink 2s ease-in-out infinite 1s; }
-        .sq-corner-dot-br { bottom: -4px; right: -4px; animation: cornerBlink 2s ease-in-out infinite 1.5s; }
-        @keyframes cornerBlink { 0%,60%,100%{opacity:1}70%{opacity:0}80%{opacity:1}90%{opacity:0} }
-
-        /* Scan line across the square */
         .sq-scanline {
             position: absolute;
             left: 7px; right: 7px;
@@ -198,11 +128,6 @@
             pointer-events: none;
         }
         @keyframes sqScan { 0% { top: 7px; } 100% { top: calc(100% - 9px); } }
-
-        .grade-a{color:#00ff9d;text-shadow:0 0 8px #00ff9d44}
-        .grade-c{color:#f0ff00;text-shadow:0 0 8px #f0ff0044}
-        .platform-badge{transition:all .3s}
-        .platform-badge:hover{transform:translateY(-3px);border-color:#00ff9d44}
     </style>
 </head>
 <body class="noise-bg">
@@ -210,103 +135,196 @@
     <div class="scanline-overlay"></div>
     <div class="scanline-bar"></div>
     <canvas id="particleCanvas"></canvas>
-    <div class="data-stream" style="left:8%;height:200px;animation-delay:0s;animation-duration:4s"></div>
-    <div class="data-stream" style="left:22%;height:150px;animation-delay:1.5s;animation-duration:3.5s"></div>
-    <div class="data-stream" style="left:68%;height:180px;animation-delay:0.8s;animation-duration:5s"></div>
-    <div class="data-stream" style="left:92%;height:120px;animation-delay:2.2s;animation-duration:3s"></div>
 
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background:rgba(10,10,15,0.8);backdrop-filter:blur(20px);border-bottom:1px solid transparent">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-            <a href="#" class="flex items-center gap-3 group">
+            <a href="#" class="flex items-center gap-3">
                 <div class="w-8 h-8 border border-cyber-green flex items-center justify-center"><iconify-icon icon="lucide:shield-check" class="text-cyber-green text-sm"></iconify-icon></div>
-                <span class="font-mono text-xs text-neutral-400 tracking-widest hidden sm-block">KABEER<span class="text-cyber-green">.sec</span></span>
+                <span class="font-mono text-xs text-neutral-400 tracking-widest hidden sm:block">KABEER<span class="text-cyber-green">.sec</span></span>
             </a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="#about" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">About</a>
                 <a href="#skills" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">Skills</a>
                 <a href="#projects" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">Projects</a>
-                <a href="#research" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">Research</a>
                 <a href="#education" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">Education</a>
-                <a href="#learning" class="nav-link font-mono text-xs tracking-widest text-neutral-400 hover:text-cyber-green transition-colors uppercase">Paths</a>
-                <a href="mailto:mohomedkabeer25@gmail.com" class="font-mono text-xs tracking-widest text-black bg-cyber-green px-5 py-2 hover:bg-white transition-all duration-300 uppercase font-semibold">Contact</a>
+                <a href="mailto:mohomedkabeer25@gmail.com" class="font-mono text-xs tracking-widest text-black bg-cyber-green px-5 py-2 hover:bg-white transition-all uppercase font-semibold">Contact</a>
             </div>
-            <button id="menuToggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 group">
-                <span class="w-6 h-[1px] bg-neutral-400 group-hover:bg-cyber-green transition-all duration-300 origin-center" id="menuLine1"></span>
-                <span class="w-6 h-[1px] bg-neutral-400 group-hover:bg-cyber-green transition-all duration-300" id="menuLine2"></span>
-                <span class="w-4 h-[1px] bg-neutral-400 group-hover:bg-cyber-green transition-all duration-300 origin-center" id="menuLine3"></span>
+            <button id="menuToggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+                <span class="w-6 h-[1px] bg-neutral-400"></span>
+                <span class="w-6 h-[1px] bg-neutral-400"></span>
+                <span class="w-4 h-[1px] bg-neutral-400"></span>
             </button>
         </div>
     </nav>
 
     <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-cyber-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8">
-        <a href="#about" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">ABOUT</a>
-        <a href="#skills" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">SKILLS</a>
-        <a href="#projects" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">PROJECTS</a>
-        <a href="#research" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">RESEARCH</a>
-        <a href="#education" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">EDUCATION</a>
-        <a href="#learning" class="mobile-nav-link font-orbit text-2xl text-neutral-300 hover:text-cyber-green transition-colors">PATHS</a>
-        <a href="mailto:mohomedkabeer25@gmail.com" class="mobile-nav-link font-orbit text-2xl text-cyber-green">CONTACT</a>
+        <a href="#about" class="mobile-nav-link font-orbit text-2xl text-neutral-300">ABOUT</a>
+        <a href="#skills" class="mobile-nav-link font-orbit text-2xl text-neutral-300">SKILLS</a>
+        <a href="#projects" class="mobile-nav-link font-orbit text-2xl text-neutral-300">PROJECTS</a>
+        <a href="#education" class="mobile-nav-link font-orbit text-2xl text-neutral-300">EDUCATION</a>
+        <a href="mailto:mohomedkabeer25@gmail.com" class="text-cyber-green font-orbit text-2xl">CONTACT</a>
     </div>
 
     <section id="hero" class="relative min-h-screen flex items-center cyber-grid overflow-hidden">
-        <div class="hex-decoration" style="top:15%;right:10%"></div>
-        <div class="hex-decoration" style="bottom:20%;left:5%;animation-delay:2s"></div>
         <div class="max-w-7xl mx-auto px-6 pt-24 pb-16 relative z-10 w-full">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <div class="flex items-center gap-3 mb-8 reveal-up" style="transition-delay:0.1s"><div class="status-dot"></div><span class="font-mono text-xs text-cyber-green tracking-widest uppercase">Open to opportunities</span></div>
-                    <div class="mb-4 reveal-up" style="transition-delay:0.2s"><span class="font-mono text-xs text-neutral-500 tracking-widest">&gt; initializing_sec_profile...</span></div>
-                    <h1 class="font-orbit text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 reveal-up" style="transition-delay:0.3s">
+                    <div class="flex items-center gap-3 mb-8 reveal-up"><div class="status-dot"></div><span class="font-mono text-xs text-cyber-green tracking-widest uppercase">Open to opportunities</span></div>
+                    <h1 class="font-orbit text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 reveal-up">
                         <span class="text-white">KABEER</span><br>
                         <span class="glitch text-cyber-green neon-green" data-text="FAUZAN">FAUZAN</span>
                     </h1>
-                    <div class="mb-8 reveal-up" style="transition-delay:0.4s"><span id="typedText" class="font-mono text-sm text-neutral-400 typing-cursor"></span></div>
-
-                    <div class="mb-10 reveal-up" style="transition-delay:0.5s">
-                        <p class="font-mono text-sm text-neutral-300 leading-relaxed">BSc (Hons) Cyber Security & Digital Forensics</p>
-                        <p class="font-mono text-sm text-neutral-400 leading-relaxed mt-1">HND in Cybersecurity Engineering</p>
-                        <p class="font-mono text-sm text-neutral-500 leading-relaxed mt-1">Diploma in Information Technology</p>
+                    <div class="mb-8 reveal-up"><span id="typedText" class="font-mono text-sm text-neutral-400 typing-cursor"></span></div>
+                    <div class="mb-10 reveal-up">
+                        <p class="font-mono text-sm text-neutral-300">BSc (Hons) Cyber Security & Digital Forensics</p>
+                        <p class="font-mono text-sm text-neutral-400 mt-1">HND in Cybersecurity Engineering</p>
                     </div>
-
-                    <div class="flex flex-wrap gap-4 reveal-up" style="transition-delay:0.6s">
-                        <a href="#projects" class="group relative inline-flex items-center gap-3 font-mono text-xs tracking-widest uppercase font-semibold bg-cyber-green text-black px-8 py-4 overflow-hidden transition-all duration-300 hover:bg-white"><span class="relative z-10">View Projects</span><iconify-icon icon="lucide:arrow-down-right" class="relative z-10 text-base transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></iconify-icon></a>
-                        <a href="mailto:mohomedkabeer25@gmail.com?subject=Hiring%20Inquiry%20-%20Kabeer%20Fauzan" class="inline-flex items-center gap-3 font-mono text-xs tracking-widest uppercase font-semibold text-neutral-300 border border-cyber-border px-8 py-4 hover:border-cyber-green hover:text-cyber-green transition-all duration-300"><span>Hire Me</span><iconify-icon icon="lucide:mail" class="text-base"></iconify-icon></a>
-                    </div>
-                    <div class="flex gap-8 mt-12 reveal-up" style="transition-delay:0.7s">
-                        <div><div class="font-orbit text-2xl font-bold text-white counter-value" data-target="7">0</div><div class="font-mono text-[10px] text-neutral-500 tracking-widest uppercase mt-1">Projects</div></div>
-                        <div class="w-px bg-cyber-border"></div>
-                        <div><div class="font-orbit text-2xl font-bold text-white counter-value" data-target="4">0</div><div class="font-mono text-[10px] text-neutral-500 tracking-widest uppercase mt-1">Research</div></div>
-                        <div class="w-px bg-cyber-border"></div>
-                        <div><div class="font-orbit text-2xl font-bold text-cyber-green threat-counter" id="threatCounter">0</div><div class="font-mono text-[10px] text-neutral-500 tracking-widest uppercase mt-1">Threats Simulated</div></div>
+                    <div class="flex flex-wrap gap-4 reveal-up">
+                        <a href="#projects" class="bg-cyber-green text-black px-8 py-4 font-mono text-xs font-bold uppercase hover:bg-white transition-all">View Projects</a>
+                        <a href="mailto:mohomedkabeer25@gmail.com" class="border border-cyber-border text-white px-8 py-4 font-mono text-xs font-bold uppercase hover:border-cyber-green transition-all">Hire Me</a>
                     </div>
                 </div>
 
-                <div class="relative flex items-center justify-center mt-12 lg:mt-0">
-                    <div class="profile-square-outer profile-entrance" style="animation-delay:0.6s">
-                        <div class="profile-square-glow"></div>
+                <div class="relative flex items-center justify-center mt-12 lg:mt-0 reveal-up">
+                    <div class="profile-square-outer">
                         <div class="profile-square-ring"></div>
                         <div class="profile-square-inner"></div>
                         <div class="profile-square-img">
-                            <img src="https://i.postimg.cc/ZnzQyLdp/kabeer-new.png">
+                            <img src="https://i.postimg.cc/ZnzQyLdp/kabeer-new.png" alt="Kabeer Fauzan">
                         </div>
                         <div class="sq-scanline"></div>
-                        <div class="sq-corner-dot sq-corner-dot-tl"></div>
-                        <div class="sq-corner-dot sq-corner-dot-tr"></div>
-                        <div class="sq-corner-dot sq-corner-dot-bl"></div>
-                        <div class="sq-corner-dot sq-corner-dot-br"></div>
-
-                        <div class="absolute -top-3 right-[-60px] bg-cyber-panel border border-cyber-border px-3 py-2 float-slow" style="animation-delay:0.5s"><div class="flex items-center gap-2"><iconify-icon icon="lucide:shield-alert" class="text-cyber-green text-sm"></iconify-icon><span class="font-mono text-[10px] text-neutral-300">CYBER SEC</span></div></div>
-                        <div class="absolute -bottom-3 left-[-50px] bg-cyber-panel border border-cyber-border px-3 py-2 float-medium" style="animation-delay:1s"><div class="flex items-center gap-2"><iconify-icon icon="lucide:gamepad-2" class="text-cyber-purple text-sm"></iconify-icon><span class="font-mono text-[10px] text-neutral-300">GAME DEV</span></div></div>
-                        <div class="absolute top-1/2 -translate-y-1/2 -left-[70px] bg-cyber-panel border border-cyber-border px-3 py-2 float-slow" style="animation-delay:2s"><div class="flex items-center gap-2"><iconify-icon icon="lucide:search" class="text-cyber-red text-sm"></iconify-icon><span class="font-mono text-[10px] text-neutral-300">FORENSICS</span></div></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 reveal-up" style="transition-delay:1s">
-            <span class="font-mono text-[10px] text-neutral-500 tracking-widest uppercase">Scroll</span>
-            <div class="w-[1px] h-12 bg-gradient-to-b from-cyber-green/50 to-transparent relative overflow-hidden"><div class="w-full h-4 bg-cyber-green absolute" style="animation:scrollIndicator 2s ease-in-out infinite"></div></div>
+    </section>
+
+    <div class="relative overflow-hidden py-6 border-y border-cyber-border/50 bg-cyber-panel/50">
+        <div class="marquee-track">
+            <span class="font-mono text-xs tracking-[0.3em] text-neutral-600 mx-8">DIGITAL FORENSICS ◆ ETHICAL HACKING ◆ NETWORK SECURITY ◆ UNITY ENGINE ◆ PYTHON ◆ C#</span>
+            <span class="font-mono text-xs tracking-[0.3em] text-neutral-600 mx-8">DIGITAL FORENSICS ◆ ETHICAL HACKING ◆ NETWORK SECURITY ◆ UNITY ENGINE ◆ PYTHON ◆ C#</span>
+        </div>
+    </div>
+
+    <section id="about" class="relative py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="bg-cyber-panel border border-cyber-border p-6 font-mono text-xs leading-6 text-neutral-400 neon-box-green">
+                        <div class="text-cyber-green">$ cat about.json</div>
+                        <div class="mt-3 text-neutral-500">{</div>
+                        <div class="ml-4">"name": "Kabeer Fauzan",</div>
+                        <div class="ml-4">"location": "Kandy, Sri Lanka",</div>
+                        <div class="ml-4">"motto": "Defend. Investigate. Create."</div>
+                        <div class="text-neutral-500">}</div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <span class="section-label mb-6 inline-block">About Me</span>
+                    <h2 class="font-orbit text-3xl font-bold text-white mb-6 tracking-tight">Digital defender & <span class="text-cyber-green">game creator</span></h2>
+                    <p class="text-neutral-400 font-light leading-relaxed mb-6">BSc (Hons) Cyber Security & Digital Forensics student with a passion for ethical hacking and building security simulations. I bridge the gap between digital defense and game development.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    </body>
+    <section id="skills" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20"><span class="section-label">Technical Arsenal</span><h2 class="font-orbit text-3xl font-bold text-white mt-6">Skills & Expertise</h2></div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="hud-border bg-cyber-panel/50 p-8 reveal-left">
+                    <h3 class="font-orbit text-white mb-6">DIGITAL FORENSICS</h3>
+                    <div class="space-y-5">
+                        <div class="skill-item"><div class="flex justify-between mb-2"><span class="font-mono text-xs">Disk Image Analysis</span><span class="text-cyber-green">90%</span></div>
+                        <div class="h-1 bg-cyber-border rounded-full"><div class="h-full bg-cyber-green" style="width:90%"></div></div></div>
+                    </div>
+                </div>
+                <div class="hud-border bg-cyber-panel/50 p-8 reveal-right">
+                    <h3 class="font-orbit text-white mb-6">PROGRAMMING</h3>
+                    <div class="space-y-5">
+                        <div class="skill-item"><div class="flex justify-between mb-2"><span class="font-mono text-xs">Python / C#</span><span class="text-cyber-purple">85%</span></div>
+                        <div class="h-1 bg-cyber-border rounded-full"><div class="h-full bg-cyber-purple" style="width:85%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20"><span class="section-label">Selected Works</span><h2 class="font-orbit text-3xl font-bold text-white mt-6">Featured Projects</h2></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card hud-border bg-cyber-panel/50 p-7 reveal-up">
+                    <span class="font-mono text-[10px] text-cyber-purple uppercase">Game Dev</span>
+                    <h3 class="font-orbit text-lg font-bold text-white my-3">Logfile_0</h3>
+                    <p class="text-neutral-400 text-sm font-light">A hacking simulation game teaching cybersecurity through terminal mechanics.</p>
+                </div>
+                <div class="project-card hud-border bg-cyber-panel/50 p-7 reveal-up" style="transition-delay:0.1s">
+                    <span class="font-mono text-[10px] text-cyber-green uppercase">Networking</span>
+                    <h3 class="font-orbit text-lg font-bold text-white my-3">Enterprise Network</h3>
+                    <p class="text-neutral-400 text-sm font-light">Complex topology design using OSPF routing and VLSM subnetting.</p>
+                </div>
+                <div class="project-card hud-border bg-cyber-panel/50 p-7 reveal-up" style="transition-delay:0.2s">
+                    <span class="font-mono text-[10px] text-cyber-red uppercase">Forensics</span>
+                    <h3 class="font-orbit text-lg font-bold text-white my-3">Disk Investigation</h3>
+                    <p class="text-neutral-400 text-sm font-light">Analyzing evidence from disk images using Autopsy and FTK Imager.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <span class="section-label">Background</span>
+                    <h2 class="font-orbit text-3xl font-bold text-white mt-6">Education & Qualifications</h2>
+                </div>
+                <div class="relative pl-12">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item relative pb-12 reveal-right">
+                        <div class="timeline-dot" style="top:6px"></div>
+                        <div class="hud-border bg-cyber-panel/50 p-6 ml-4">
+                            <span class="font-mono text-[10px] text-cyber-green">2025 — 2026</span>
+                            <h3 class="font-orbit text-base font-bold text-white mt-2">BSc (Hons) Cyber Security & Digital Forensics</h3>
+                            <p class="text-neutral-500 text-sm mt-1">Kingston University via ESOFT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-cyber-border py-12 text-center">
+        <span class="font-mono text-[10px] text-neutral-600 tracking-widest">© 2026 KABEER FAUZAN // DEFEND. INVESTIGATE. CREATE.</span>
+    </footer>
+
+    <script>
+        // Background Particles
+        const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
+        function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+        resize(); window.onresize=resize;
+        let particles=[];
+        class P{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.vx=(Math.random()-.5)*.5;this.vy=(Math.random()-.5)*.5}
+        update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1}
+        draw(){ctx.fillStyle='#00ff9d11';ctx.fillRect(this.x,this.y,2,2)}}
+        for(let i=0;i<60;i++)particles.push(new P());
+        function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(anim)}
+        anim();
+
+        // Typing Effect
+        const typedEl=document.getElementById('typedText'),phrases=['Cyber Security Student','Digital Forensics Investigator','Indie Game Developer'];let pIdx=0,cIdx=0;
+        function type(){let c=phrases[pIdx];typedEl.textContent=c.substring(0,cIdx);cIdx++;if(cIdx>c.length){cIdx=0;pIdx=(pIdx+1)%phrases.length;setTimeout(type,2000)}else setTimeout(type,80)}
+        type();
+
+        // Mobile Menu
+        const btn=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');
+        btn.onclick=()=>menu.classList.toggle('open');
+        document.querySelectorAll('.mobile-nav-link').forEach(l=>l.onclick=()=>menu.classList.remove('open'));
+
+        // Scroll Animations
+        const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+        document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
+    </script>
+</body>
 </html>
